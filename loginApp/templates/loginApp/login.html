@@ -1,0 +1,22 @@
+{% extends 'loginApp/base.html'  %}
+{% block title %}Login{% endblock %}
+ {% load bootstrap %}
+
+
+{% block content %}
+{% if sucess%}
+<br>
+<div class="alert alert-primary" role="alert">
+  Nome ou Senha incorretos
+</div>
+{% endif%}
+<div>
+    <p class="h1">Login</p>
+<form action="." method="POST" class="post-form">
+       {% csrf_token %}
+      {{  form|bootstrap }}
+  <button type="submit" id="btn" class="btn btn-primary">Login</button>
+
+</form>
+    </div>
+{% endblock %}

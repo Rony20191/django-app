@@ -1,0 +1,22 @@
+{% extends 'loginApp/base.html'  %}
+{% block title %}Adicionar um usuário{% endblock %}
+ {% load bootstrap %}
+
+
+{% block content %}
+{% if sucess %}
+<br>
+<div class="alert alert-primary" role="alert">
+  Cadastrado Com Sucesso!!!
+</div>
+{% endif%}
+<div>
+    <p class="h1">Cadastrar</p>
+<form action="." method="POST" class="post-form">
+       {% csrf_token %}
+      {{  form|bootstrap }}
+  <button type="submit" id="btn" class="btn btn-primary">Enviar</button>
+
+</form>
+    </div>
+{% endblock %}
